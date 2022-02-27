@@ -67,7 +67,7 @@ class AjaxUI {
       this.BASE = this.BASE + '/';
     }
     //If path doesn't use https, add it.
-    if (!this.BASE.includes('https')) {
+    if (this.BASE.match('/https/gm').length === 0) {
       this.BASE = this.BASE.replace('http', 'https');
     }
     console.info('Base path is ' + this.BASE);
